@@ -26,6 +26,7 @@ public class FrontendListenSocket extends RawSocket{
                 Packet packet = new Packet(Arrays.copyOfRange(data, 20, dataLength));
                 if (packet.destPort == port && packet.checksum == packet.calChecksum() && packet.isACK == 0) {
                     Packet resPacket = new Packet(packet.destPort, packet.sourcePort, 1,  packet.message);
+                    System.out.println("Frontend received message: " + packet.message);
                     this.write(InetAddress.getByAddress(address), resPacket.toBytes());
                     forwardMessage(packet.message, address);
                 }

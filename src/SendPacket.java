@@ -31,7 +31,7 @@ public class SendPacket extends Thread {
                 try {
                     System.out.println("Sending from " + packet.sourcePort + " to " + packet.destPort + " message: " + packet.message);
                     socket.write(ip, packetBytes);
-                    Thread.sleep(3000);
+                    Thread.sleep(10000);
                 } catch (IOException | InterruptedException e) {
                     e.printStackTrace();
                 }

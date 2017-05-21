@@ -24,7 +24,6 @@ public class SHA256Socket extends RawSocket {
         StringBuffer stringBuffer = new StringBuffer();
         for (int i = 0; i < mdbytes.length; i++)
             stringBuffer.append(Integer.toString((mdbytes[i] & 0xff) + 0x100, 16).substring(1));
-        System.out.println(stringBuffer.toString());
         new SendPacket(this, new Packet(SHA256Socket.port, clientPort, 0, "SHA-256|" + stringBuffer.toString()), InetAddress.getByName(clientAdress)).run();
     }
 
