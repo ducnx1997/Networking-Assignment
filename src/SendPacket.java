@@ -12,7 +12,7 @@ public class SendPacket extends Thread {
     public RawSocket socket;
     public Packet packet;
     public InetAddress ip;
-    byte[] data = new byte[1000];
+    byte[] data = new byte[200];
     byte[] packetBytes;
 
     public SendPacket(RawSocket socket, Packet packet, InetAddress ip) {

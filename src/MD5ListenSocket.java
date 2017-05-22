@@ -28,7 +28,7 @@ public class MD5ListenSocket extends RawSocket {
     }
 
     public void listen(int port) throws IOException, NoSuchAlgorithmException {
-        byte[] data = new byte[1000];
+        byte[] data = new byte[200];
         MD5ListenSocket.port = port;
         while (true) {
             int dataLength = this.read(data);

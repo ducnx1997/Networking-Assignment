@@ -40,6 +40,7 @@ public class Packet {
         length = byteBuffer.getInt();
         isACK = byteBuffer.getInt();
         message = "";
+        if (data.length % 2 == 1) return;
         while (byteBuffer.hasRemaining()) message += byteBuffer.getChar();
     }
 

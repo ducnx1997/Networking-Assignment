@@ -32,6 +32,7 @@ public class Client  {
         // SEND MESSAGE
         RawSocket clientSendSocket = new RawSocket();
         clientSendSocket.open(RawSocket.PF_INET, RawSocket.getProtocolByName("ip"));
+        clientSendSocket.setReceiveBufferSize(200);
         clientSendSocket.write(InetAddress.getLocalHost(), new byte[0]);
         String clientRevPort = Integer.toString(clientPort);
         while (clientRevPort.length() < 5) clientRevPort = "0" + clientRevPort;

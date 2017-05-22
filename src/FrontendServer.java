@@ -11,6 +11,7 @@ public class FrontendServer {
         // RUN LISTEN SOCKET
         FrontendListenSocket frontendListenSocket = new FrontendListenSocket();
         frontendListenSocket.open(RawSocket.PF_INET, RawSocket.getProtocolByName("ip"));
+        frontendListenSocket.setReceiveBufferSize(200);
         frontendListenSocket.write(InetAddress.getLocalHost(), new byte[0]);
         frontendListenSocket.listen(Integer.parseInt(args[0]));
     }

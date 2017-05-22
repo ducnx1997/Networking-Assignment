@@ -17,7 +17,7 @@ public class FrontendListenSocket extends RawSocket{
     }
 
     public void listen(int port) throws IOException, InterruptedException {
-        byte[] data = new byte[1000];
+        byte[] data = new byte[200];
         FrontendListenSocket.port = port;
         byte[] address = new byte[4];
         while (true) {

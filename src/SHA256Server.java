@@ -12,6 +12,7 @@ public class SHA256Server {
         SHA256Socket sha256Socket = new SHA256Socket();
         sha256Socket.open(RawSocket.PF_INET, RawSocket.getProtocolByName("ip"));
         sha256Socket.write(InetAddress.getLocalHost(), new byte[0]);
+        sha256Socket.setReceiveBufferSize(200);
         sha256Socket.listen(Integer.parseInt(args[0]));
     }
 }

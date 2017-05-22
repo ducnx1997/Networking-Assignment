@@ -12,6 +12,7 @@ public class MD5Server {
         MD5ListenSocket md5ListenSocket = new MD5ListenSocket();
         md5ListenSocket.open(RawSocket.PF_INET, RawSocket.getProtocolByName("ip"));
         md5ListenSocket.write(InetAddress.getLocalHost(), new byte[0]);
+        md5ListenSocket.setReceiveBufferSize(200);
         md5ListenSocket.listen(Integer.parseInt(args[0]));
     }
 }

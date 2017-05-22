@@ -12,7 +12,7 @@ public class ClientSocket extends RawSocket {
     public String mess;
 
     public void listen(int port) throws IOException, InterruptedException {
-        byte[] data = new byte[1000];
+        byte[] data = new byte[200];
         byte[] address = new byte[4];
         String SHA256Hash = null;
         String MD5Hash = null;
